@@ -1,8 +1,8 @@
-from django.conf.urls import patterns, include, url
+from django.conf.urls import include, url
 from qa.views import test, question, qa_list_all, qa_popular_all, ask_add, answer_add, signup_add, login_add
 
 
-urlpatterns = patterns('', 
+urlpatterns = [ 
 	url(r'^$', qa_list_all, name='main'),
 	url(r'^\?page=(?P<page>\d+)', qa_list_all, name='main'),
 	url(r'^login/', login_add, name='login'),
@@ -13,4 +13,4 @@ urlpatterns = patterns('',
 	url(r'^popular/', qa_popular_all, name='popular'),
 	url(r'^popular/\?page=(?P<page>\d+)', qa_popular_all, name='popular'),
 	url(r'^new/', test, name='new'),
-)
+]
